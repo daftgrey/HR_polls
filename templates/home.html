@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block custom_css %}
+  <link rel='stylesheet' type='text/css' href="{% static 'css/home_styles.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div id="home-content">
+        <h1>HR Project</h1>
+        <h3>Это приложение предназначено для создание опросов</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
