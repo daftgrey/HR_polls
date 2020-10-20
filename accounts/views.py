@@ -17,7 +17,7 @@ def login_user(request):
             redirect_url = request.GET.get('next', 'home')
             return redirect(redirect_url)
         else:
-            messages.error(request, 'Bad username or password')
+            messages.error(request, 'Не правильное имя пользователя или пароль')
 
     return render(request, 'accounts/login.html', {})
 
@@ -35,7 +35,7 @@ def user_registration(request):
             password = form.cleaned_data['password1']
             email = form.cleaned_data['email']
             user = User.objects.create_user(username, email=email, password=password)
-            messages.success(request, 'Thanks for registering {}'.format(user.username))
+            messages.success(request, 'Спасибо за регистрацию {}'.format(user.username))
             return redirect('accounts:login')
     else:
         form = UserRegistrationForm()
