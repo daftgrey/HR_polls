@@ -21,7 +21,7 @@ def polls_list(request):
         polls = polls.order_by('text')
 
     if 'pub_date' in request.GET:
-        polls = polls.order_by('-pub_date')
+        polls = polls.order_by('pub_date')
 
     if 'num_votes' in request.GET:
         polls = polls.annotate(Count('vote')).order_by('-vote__count')
